@@ -1,0 +1,19 @@
+
+.nav{
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 100%;
+    background-color: #c1e6e2;
+    font-size: 2rem;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.link{
+    text-decoration: none;
+    color:rgb(89, 187, 101);
+    
+    
+    
+}

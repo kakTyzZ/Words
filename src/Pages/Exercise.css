@@ -1,0 +1,72 @@
+.main-div{
+    background-color: rgb(207, 216, 210);
+    height: 100vh;
+}
+
+.mainExerciseDiv{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #efe2e2;
+    margin-top: 20px;
+}
+
+.exerciseWordsContainer{
+    display: flex;
+    font-size: 2rem;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.item{
+    margin: 0 10px;
+    border:2px black solid;
+    max-width: 200px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.exerciseInput{
+    margin: 0 10px;
+    border:2px black solid;
+    max-width: 300px;
+    width: 100%;
+    font-size: 2rem;
+}
+.exerciseButton{
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #46b4e3;
+}
+.active{
+    background-color: green;
+}
+.wrong{
+    box-shadow: 3px 3px 5px red;
+}
+.scores-container{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.timesPlayed{
+    font-size: 2rem;
+    
+}
+.success{
+    font-size: 2rem;
+}
+.exercise-no-words{
+    font-size: 2rem;
+}
