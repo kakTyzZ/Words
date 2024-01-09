@@ -5,9 +5,11 @@ import classes from "./NavBar.module.css";
 export default function NavBar({ path, name }) {
   return (
     <div className={classes.nav}>
-      <Link className={classes.link} to={path}>
-        {name}
-      </Link>
+      {name.map((n, i) => (
+        <Link key={n} className={classes.link} to={path[i]}>
+          {n}
+        </Link>
+      ))}
     </div>
   );
 }

@@ -1,0 +1,68 @@
+.wordContainer{
+    font-size: 1rem;
+    border:1px solid white;
+    padding: 0px 30px;
+    border-radius: 10px;
+    margin: 5px;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #99a3a3;
+    color: #fff;
+    box-shadow: 0 0 15px #99a3a3,0 0 30px #99a3a3,0 0 60px #99a3a3;
+}
+.wordContainerRight{
+    font-size: 1rem;
+    border:1px solid white;
+    padding: 0px 30px;
+    border-radius: 10px;
+    margin: 5px;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    color: #fff;
+    box-shadow: 0 0 15px green,0 0 30px green,0 0 60px green;
+}
+.wordContainerScale{
+    transition: all 1s ease-in-out;
+    transform: scale(1.4);
+}
+.progressBarContainer{
+    
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+    left: 300px;
+    bottom: 300px;
+    right: 300px;
+    pointer-events: none;
+    height: 100px;
+ 
+}
+.firstElementBigOne{
+    transform: scale(1.4);
+}
+.progressBarContainer button{
+    pointer-events: all;
+}
+
+
+@media (max-width:768px){
+    .progressBarContainer{
+        bottom: -50px;
+    }
+}
+
+@media (min-width:320px) and (max-width:480px){
+    .progressBarContainer{
+        bottom: -50px;
+        right: 50px;
+        left: 50px;
+    }
+}

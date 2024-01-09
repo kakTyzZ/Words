@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./Exercise.css";
+import classes from "./Exercise.module.css";
 import NavBar from "../Components/NavBar/NavBar";
+import ExerciseOne from "../Components/ExerciseOne/ExerciseOne";
+import Boxes from "../Components/Divs/Boxes";
 
 export default function Exercise() {
   const [words, setWords] = useState([]);
@@ -31,20 +33,23 @@ export default function Exercise() {
   }
 
   function resetWhenFalseAnswer(e) {
+    const cssWrong = classes.exerciseInput + " " + classes.wrong;
+    console.log("css:", cssWrong);
     setWords(baseWords);
-    e.target.previousElementSibling.className = `exerciseInput wrong`;
     e.target.parentNode.parentNode.reset();
+    e.target.previousElementSibling.className = cssWrong;
+    console.log("element:", e.target.previousElementSibling);
     setScore(score + 1);
     setTimeout(
-      () => (e.target.previousElementSibling.className = `exerciseInput`),
-      [1000]
+      () => (e.target.previousElementSibling.className = classes.exerciseInput),
+      1500
     );
     const cl = e.target.parentNode.parentNode.querySelectorAll(".active");
     cl.forEach((elem) => (elem.className = ""));
   }
 
   function addClasstoRef(e) {
-    e.target.nextElementSibling.className = "active";
+    e.target.nextElementSibling.className = classes.active;
 
     const cl = e.target.parentNode.parentNode.querySelectorAll(".active");
     if (cl.length === words.length) {
@@ -81,47 +86,37 @@ export default function Exercise() {
   }, [words]);
 
   return (
-    <div className="main-div">
-      <NavBar path={"/"} name={"Главная страница"} />
-      <div className="scores-container">
-        <div className="timesPlayed">Попыток: {score}</div>
-        <div className="success">Пройдено: {success}</div>
-      </div>
+    <div className={classes.mainDiv}>
+      <Boxes numberOfBoxes={24 + (words.length ? words.length * 3 : 0)} />
+      <NavBar path={["/"]} name={["Главная страница"]} />
 
-      <form className="mainExerciseDiv">
+      <form className={classes.mainExerciseDiv}>
+        <div className={classes.scoresContainer}>
+          <div className={classes.timesPlayed}>Попыток: {score}</div>
+          <div className={classes.success}>Пройдено: {success}</div>
+        </div>
+
         {words.length > 0 ? (
           words.map((word) => (
-            <div className="exerciseWordsContainer" key={word.id}>
-              <div className="item">
-                {success % 2 === 1 ? word.value2 : word.value1}
-              </div>
-              <input
-                className="exerciseInput"
-                placeholder="Введите ответ"
-                onChange={(e) => setAnswerValue(e.target.value)}
-              ></input>
-              <button
-                className="exerciseButton"
-                onClick={(e) => checkAnswerValue(word, e)}
-              >
-                Ответить
-              </button>
-              <div className={""}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="1em"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
-                </svg>
-              </div>
-            </div>
+            <ExerciseOne
+              classes={classes}
+              word={word}
+              success={success}
+              key={word.id}
+              checkAnswerValue={checkAnswerValue}
+              setAnswerValue={setAnswerValue}
+            />
           ))
         ) : (
-          <div className="exercise-no-words">No Words</div>
+          <div className={classes.exerciseNoWords}>No Words</div>
         )}
         {words.length > 1 ? (
-          <button onClick={(e) => sortWords(e)}>Перемешать слова</button>
+          <button
+            className={classes.shuffle__button}
+            onClick={(e) => sortWords(e)}
+          >
+            Перемешать слова
+          </button>
         ) : (
           <div></div>
         )}

@@ -3,17 +3,38 @@
     margin: 0 auto;
     max-width: 1024px;
     width: 100%;
-    background-color: #c1e6e2;
+    position: absolute;
+    z-index: 10;
     font-size: 2rem;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
+    
 }
 .link{
     text-decoration: none;
     color:rgb(89, 187, 101);
-    
-    
-    
+    padding: 15px;
+    pointer-events: all;
+    box-shadow: 0 0 15px #f0f,0 0 30px #f0f,0 0 60px #f0f;
+}
+
+@media (max-width: 768px){
+    .nav{
+        
+        max-width: 768px;
+    }
+}
+@media (min-width:320px)and (max-width:480px){
+    .nav{
+        top: 40px;
+        max-width: 320px;
+        flex-direction: column;
+        gap:10px;
+    }
+    .link{
+        padding: 5px;
+    }
 }

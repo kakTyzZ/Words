@@ -1,0 +1,72 @@
+/* .exerciseWordsContainer{
+    display: flex;
+    font-size: 2rem;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.exerciseInput{
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    border:1px solid #000;
+    backdrop-filter: blur(10px);
+    color:#fff;
+    display: flex;
+    text-align: center;
+    margin: 0 10px;
+    
+    max-width: 500px;
+    width: 100%;
+    font-size: 2rem;
+    padding: 10px 15px;
+    pointer-events: all;
+}
+
+.exerciseButton{
+    margin-right: 5px;
+    border-radius: 5px;
+    background: #f0f;
+    color: #fff;
+    box-shadow: 0 0 15px #f0f,0 0 30px #f0f,0 0 60px #f0f;
+    pointer-events: all;
+}
+.item{
+    margin: 0 10px;
+    padding: 10px 15px;
+    max-width: 300px;
+    width: 100%;
+    font-size: 2rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    border:1px solid #000;
+    backdrop-filter: blur(10px);
+    color:#fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.svgContainer{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    border-radius: 50%;
+}
+.exerciseInput::placeholder{
+    color: white;
+    font-size: 1.5rem;
+    
+}
+.wrong{
+    background: red;
+    color: #171616;
+    box-shadow: 0 0 15px red,0 0 30px red,0 0 60px red;
+} */
