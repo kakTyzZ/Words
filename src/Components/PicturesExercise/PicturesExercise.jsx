@@ -17,10 +17,11 @@ export function PicturesExercise() {
   const imgRef = useRef(null);
 
   const myKey = "875addf3b97c4dfd32b668927bb4bda3";
-  const myPrompt =
-    words.length > 0 && success + 1 !== words.length
-      ? words[success].value1
-      : "";
+  let myPrompt;
+  try {
+    myPrompt =
+      words.length > 0 && success < words.length ? words[success].value1 : "";
+  } catch (error) {}
 
   function wordsClick(e, answerWord) {
     const input = inputRef.current;

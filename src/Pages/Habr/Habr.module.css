@@ -1,0 +1,101 @@
+.mainContainer{
+    min-height: 100dvh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+.habrContainer{
+    background: #fff;
+    width: 640px;
+    height: 1200px;
+    
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    
+}
+.title{
+    color:#000;
+    font-size: 42px;
+    font-weight: 100;
+    line-height: 51px;
+    margin: 0 auto;
+ }
+.menu{
+    display: flex;
+    color: #000;
+    font-size: 30px;
+    justify-content: space-between;
+    margin: 0 24px;
+}
+.burger{
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;max-width: 208px;
+    width: 100%;
+    position: relative;
+}
+.filterContainer{
+    display: flex;
+}
+.filterCircles{
+    padding: 8px;
+    color: #000;
+    
+font-size: 32px;
+font-weight: 400;
+line-height: 39px;
+letter-spacing: 0em;
+display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+
+
+}
+.filterSquares{
+    margin-left: 28px;
+    padding: 8px;
+    color: #000;
+    font-size: 32px;
+font-weight: 400;
+line-height: 39px;
+letter-spacing: 0em;
+display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+input {
+    
+    
+    margin: 0;
+    font: inherit;
+    
+    width: 1.15em;
+    height: 1.15em;
+    border:1px solid black;
+    border-radius: 0.15em;
+    
+  }
+input:checked{
+    accent-color:  #ffffff; 
+    
+    
+  }
+
+.content{
+    color: #000;
+}
+.contentDiv{
+    color: #000;
+    display: grid;
+   /*  grid-template-columns: repeat(4, 128px);
+    grid-template-rows: auto; */
+    grid-gap:5px 15px;
+    justify-content: center;
+    
+}

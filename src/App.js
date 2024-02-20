@@ -2,12 +2,35 @@ import classes from "./App.module.css"
 import { useEffect, useState } from 'react'
 import NavBar from './Components/NavBar/NavBar';
 import Boxes from "./Components/Divs/Boxes";
+import { useSelector } from "react-redux";
 
 function App() {
+
   const [words, setWords] = useState([])
   const [value1, setValue1] = useState('')
   const [value2, setValue2] = useState('')
 
+  useEffect(() => {
+
+    let myWords = JSON.parse(localStorage.getItem('words'))
+
+    if (myWords) {
+      setWords(myWords)
+
+    } else {
+      setWords([])
+
+    }
+
+  }, [])
+
+  useEffect(() => {
+    if (words) {
+      localStorage.setItem('words', JSON.stringify(words))
+    }
+    setValue1('')
+    setValue2('')
+  }, [words])
 
   function addNewWord() {
     /* const newValue = [value1, value2, (words.length)] */
@@ -31,23 +54,7 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    let myWords = JSON.parse(localStorage.getItem('words'))
-    if (myWords.length > 0) {
-      setWords(myWords)
-    } else {
-      setWords([])
-    }
 
-  }, [])
-
-  useEffect(() => {
-    if (words) {
-      localStorage.setItem('words', JSON.stringify(words))
-    }
-    setValue1('')
-    setValue2('')
-  }, [words])
 
 
   return (

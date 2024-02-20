@@ -17,9 +17,12 @@ export function PicturesProgressBar({ words, success }) {
   useEffect(() => {
     const divs = containerRef.current.children;
     if (divs.length > 0) {
+      console.log("success", success, "divs:", divs.length);
       divs[success - 1].className = classes.wordContainerRight;
-      divs[success].className =
-        classes.wordContainer + " " + classes.wordContainerScale;
+      if (success != divs.length) {
+        divs[success].className =
+          classes.wordContainer + " " + classes.wordContainerScale;
+      }
     }
   }, [success]);
 

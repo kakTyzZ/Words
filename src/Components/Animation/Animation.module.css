@@ -1,0 +1,11 @@
+.animationContainer{
+    display:flex;
+    min-height: 100dvh;
+    justify-content: center;
+    font-size: 2em;
+    align-items: center;
+}
+button{
+    font-size:2rem;
+    margin: 10px;
+}
